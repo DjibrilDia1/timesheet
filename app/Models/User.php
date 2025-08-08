@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'nom',
+        'prenom',
+        'telephone',
         'email',
         'password',
+        'is_responsable',
     ];
 
     /**
@@ -45,4 +48,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Pour gerer les relations avec la table periode   
+    public function employe()
+    {
+        return $this->hasMany(Periode::class, 'employe_id');
+    }
+
+    // role de l'utilisateur
+    public function isResponsable()
+    {
+        return $this->is_responsable;
+    }
+
+    // role de l'utilisateur
+    public function isEmploye()
+    {
+        return !$this->is_responsable;
+    }
+
 }
