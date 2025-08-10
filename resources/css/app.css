@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .font-abyssinica {
+        font-family: 'Abyssinica SIL', serif;
+    }
+}
 
 input:-webkit-autofill {
     background-color: #fff !important;
