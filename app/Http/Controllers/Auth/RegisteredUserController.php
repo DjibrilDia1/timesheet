@@ -48,9 +48,9 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         if ($user->is_responsable) {
-            return redirect()->route('dashboard.responsable');
+            return redirect()->route('dashboard');
         } else {
-            return redirect()->route('dashboard.employe');
+            return redirect()->route('dashboard');
         }
     }
 }
