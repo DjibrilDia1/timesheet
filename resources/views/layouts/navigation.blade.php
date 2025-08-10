@@ -13,7 +13,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <h1 class="">timetracking</h1>
+                        <h1 class="">Timetracking</h1>
                     </a>
                 </div>
 
@@ -23,9 +23,8 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-
             </div>
-           
+ 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @if (Auth::user()->is_responsable)
