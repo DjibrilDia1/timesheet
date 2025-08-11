@@ -1,16 +1,10 @@
-<nav x-data="{ open: false }" class="bg-gray-100 border-b border-gray-200">
+<nav x-data="{ open: false }" class="bg-secondary border-b border-gray-200">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo 
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>-->
 
-                <!-- Logo -->
+                <!-- Logo -->   
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <h1 class="text-primary text-2xl font-abyssinica font-bold">Timesheet</h1>
@@ -20,27 +14,26 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Mytimesheet') }}
+                        <span class="text-gray-800">{{ __('Mytimesheet') }}</span>
                     </x-nav-link>
 
                     @if (Auth::user()->is_responsable)
-                        <x-nav-link :href="route('fiche_de_temps')" :active="request()->routeIs('fiche_de_temps')">
-                            {{ __('Fiche de temps') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('a_valider')" :active="request()->routeIs('a_valider')">
-                            {{ __('A valider') }}
-                        </x-nav-link>
+                    <x-nav-link :href="route('fiche_de_temps')" :active="request()->routeIs('fiche_de_temps')">
+                        <span class="text-gray-800">{{ __('Fiche de temps') }}</span>
+                    </x-nav-link>
+                    <x-nav-link :href="route('a_valider')" :active="request()->routeIs('a_valider')">
+                        <span class="text-gray-800">{{ __('A valider') }}</span>
+                    </x-nav-link>
                     @endif
-
                 </div>
             </div>
- 
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 @if (Auth::user()->is_responsable)
-                    <div class="me-4">
-                        <h1 class="font-bold">Admin</h1>
-                    </div>
+                <div class="me-4">
+                    <h1 class="font-light text-gray-800">Admin</h1>
+                </div>
                 @endif
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -57,7 +50,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __(' Mon profile') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -67,7 +60,7 @@
                             <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Se déconnecter') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

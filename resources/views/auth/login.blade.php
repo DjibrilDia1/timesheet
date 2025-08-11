@@ -5,7 +5,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         @section('page-title')
-        <h1 class="text-2xl font-bold text-primary">Connexion</h1>
+        <h1 class="text-2xl font-abyssinica font-bold text-primary">Timesheet</h1>
         @endsection
         
         <!-- Email Address -->

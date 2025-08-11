@@ -1,3 +1,4 @@
+/* Importation de la police d'écriture Abyssinica SIL*/
 @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL:wght@400;700&display=swap');
 
 @tailwind base;
@@ -8,8 +9,12 @@
     .font-abyssinica {
         font-family: 'Abyssinica SIL', serif;
     }
+    .font-courier-new {
+        font-family: 'Courier New', Courier, monospace;
+    }
 }
 
+/* Suppression du fond gris des champs de saisie */
 input:-webkit-autofill {
     background-color: #fff !important;
     -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
